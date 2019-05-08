@@ -55,7 +55,7 @@ export async function list(title) {
  */
 export async function search(query) {
   await loadQualityProfiles();
-  const resp = await radarr().get('movies/lookup', {term: query});
+  const resp = await radarr().get('movie/lookup', {term: query});
 
   return resp.map(mapToMediaResult);
 }
